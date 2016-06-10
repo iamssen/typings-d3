@@ -1,28 +1,18 @@
 # d3-selection
 
-The type definition for `d3-selection` (part of d3.js 4.x)
+The type definition for `d3-selection` (Part of d3.js 4.x)
 
-## Install for NPM
+## Install
 
 ```
 npm install d3-selection --save
 typings install d3-selection --save
+// or typings install github:iamssen/typings-d3/d3-selection --save
 ```
 
 ```
 import {select, Selection} from 'd3-selection';
-// or
-import * as d3_selection from 'd3-selection';
-```
-
-## Install for Global
-
-```
-typings install d3-selection --save --global
-```
-
-```
-d3.select('a')
+// or import * as d3_selection from 'd3-selection';
 ```
 
 ## Using with `angular-cli`
