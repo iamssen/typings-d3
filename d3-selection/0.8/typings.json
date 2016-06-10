@@ -1,0 +1,5 @@
+{
+  "name": "d3-selection",
+  "version": "0.8.0",
+  "main": "./index.d.ts"
+}
