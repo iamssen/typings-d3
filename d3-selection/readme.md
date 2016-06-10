@@ -1,4 +1,4 @@
-# d3-selection
+# [d3-selection](https://github.com/d3/d3-selection)
 
 The type definition for `d3-selection` (Part of d3.js 4.x)
 
