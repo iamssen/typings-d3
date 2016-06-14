@@ -1,0 +1,12 @@
+{
+  "name": "typings-d3",
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc"
+  },
+  "private": true,
+  "devDependencies": {
+    "typescript": "^1.8.10"
+  }
+}

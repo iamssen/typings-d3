@@ -1,0 +1,5 @@
+{
+  "name": "d3-array",
+  "version": "0.8.1",
+  "main": "./index.d.ts"
+}

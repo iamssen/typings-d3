@@ -1,0 +1,8 @@
+{
+  "name": "d3-transition",
+  "version": "0.3.0",
+  "main": "./index.d.ts",
+  "dependencies" : {
+    "d3-selection": "github:iamssen/typings-d3/d3-selection"
+  }
+}
