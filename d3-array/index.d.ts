@@ -9,40 +9,45 @@ declare namespace d3 {
   // Statistics
   //---------------------------------------------
   /** @link https://github.com/d3/d3-array#min */
-  export function min(array:$$.Orderable[]):$$.Orderable;
-  export function min(array:any[], accessor?:$$.Accessor<any,$$.Orderable>):$$.Orderable;
+  // FIXME return type $$.Orderable is not assignable to string or number or Date
+  // - can typescript assign multiple return type?
+  // SOMEDAY ():any → ():$$.Orderable
+  export function min(array:$$.Orderable[]):any;
+  export function min(array:any[], accessor:$$.Accessor<any,$$.Orderable>):any;
   
   /** @link https://github.com/d3/d3-array#max */
-  export function max(array:$$.Orderable[]):$$.Orderable;
-  export function max(array:any[], accessor?:$$.Accessor<any,$$.Orderable>):$$.Orderable;
+  // SOMEDAY ():any → ():$$.Orderable
+  export function max(array:$$.Orderable[]):any;
+  export function max(array:any[], accessor:$$.Accessor<any,$$.Orderable>):any;
   
   /** @link https://github.com/d3/d3-array#extent */
-  export function extent(array:$$.Orderable[]):[$$.Orderable, $$.Orderable];
-  export function extent(array:any[], accessor?:$$.Accessor<any,$$.Orderable>):[$$.Orderable, $$.Orderable];
+  // SOMEDAY ():[any, any] → ():[$$.Orderable, $$.Orderable]
+  export function extent(array:$$.Orderable[]):[any, any];
+  export function extent(array:any[], accessor:$$.Accessor<any,$$.Orderable>):[any, any];
   
   /** @link https://github.com/d3/d3-array#sum */
   export function sum(array:number[]):number;
-  export function sum(array:any[], accessor?:$$.Accessor<any,number>):number;
+  export function sum(array:any[], accessor:$$.Accessor<any,number>):number;
   
   /** @link https://github.com/d3/d3-array#mean */
   export function mean(array:number[]):number;
-  export function mean(array:any[], accessor?:$$.Accessor<any,number>):number;
+  export function mean(array:any[], accessor:$$.Accessor<any,number>):number;
   
   /** @link https://github.com/d3/d3-array#median */
   export function median(array:number[]):number;
-  export function median(array:any[], accessor?:$$.Accessor<any,number>):number;
+  export function median(array:any[], accessor:$$.Accessor<any,number>):number;
   
   /** @link https://github.com/d3/d3-array#quantile */
   export function quantile(array:number[], p:number):number;
-  export function quantile(array:any[], p:number, accessor?:$$.Accessor<any,number>):number;
+  export function quantile(array:any[], p:number, accessor:$$.Accessor<any,number>):number;
   
   /** @link https://github.com/d3/d3-array#variance */
   export function variance(array:number[]):number;
-  export function variance(array:any[], accessor?:$$.Accessor<any,number>):number;
+  export function variance(array:any[], accessor:$$.Accessor<any,number>):number;
   
   /** @link https://github.com/d3/d3-array#deviation */
   export function deviation(array:number[]):number;
-  export function deviation(array:any[], accessor?:$$.Accessor<any,number>):number;
+  export function deviation(array:any[], accessor:$$.Accessor<any,number>):number;
   
   //---------------------------------------------
   // Histograms
@@ -64,24 +69,29 @@ declare namespace d3 {
      * 1: data → numeric data {}
      * @link https://github.com/d3/d3-array#histogram_value
      */
-    value():(d?:any, i?:number, data?:any[]) => $$.Orderable;
-    value(value:(d?:any, i?:number, data?:any[]) => $$.Orderable):this;
+    // SOMEDAY => any → => $$.Orderable
+    value():(d?:any, i?:number, data?:any[]) => any;
+    value(value:(d?:any, i?:number, data?:any[]) => any):this;
     
     /**
      * 2: numeric data → [min, max]
      * @link https://github.com/d3/d3-array#histogram_domain
      */
-    domain():(values:$$.Orderable[]) => [$$.Orderable, $$.Orderable];
+    // SOMEDAY => any → => $$.Orderable
+    domain():(values:$$.Orderable[]) => any;
     domain(value:[$$.Orderable, $$.Orderable]):this;
-    domain(value:(values:$$.Orderable[]) => [$$.Orderable, $$.Orderable]):this;
+    domain(value:(values:$$.Orderable[]) => any[]):this;
     
     /**
      * 3: [numeric data, min, max] → number[] - threshold points
+     *
+     * [=> any]'s return type are $$.Orderable[] or number(count)
      * @link https://github.com/d3/d3-array#histogram_thresholds
      */
-    thresholds():(values:$$.Orderable[], min:$$.Orderable, max:$$.Orderable) => $$.Orderable[];
+    // SOMEDAY => any → => $$.Orderable | number
+    thresholds():(values:$$.Orderable[], min:$$.Orderable, max:$$.Orderable) => any;
     thresholds(value:$$.Orderable[]):this;
-    thresholds(value:(values:$$.Orderable[], min:$$.Orderable, max:$$.Orderable) => $$.Orderable[]):this;
+    thresholds(value:(values:$$.Orderable[], min:$$.Orderable, max:$$.Orderable) => any):this;
   }
   
   /** @link https://github.com/d3/d3-array#histogram */

@@ -2,7 +2,6 @@ declare namespace d3 {
   // Shothand types
   export namespace $$ {
     export type ValueFunction<T> = (datum?:any, index?:number, nodes?:Node[]) => T;
-    export type CustomEvent = {type:string, sourceEvent:Event};
     export type Selector = string | Node;
     export type SelectorAll = string | Node[] | NodeListOf<Node>;
     export type Primitive = string | number | boolean;
@@ -17,7 +16,7 @@ declare namespace d3 {
   export interface Selection {
     /** @link https://github.com/d3/d3-selection#selection_select */
     select(selector:$$.Selector | $$.ValueFunction<Node>):this;
-    
+
     /** @link https://github.com/d3/d3-selection#selection_selectAll */
     selectAll(selector:$$.SelectorAll | $$.ValueFunction<Node[] | NodeListOf<Node>>):this;
     
@@ -43,7 +42,7 @@ declare namespace d3 {
     sort(comparator:(a:any, b:any) => number):this;
     
     /** @link https://github.com/d3/d3-selection#selection_call */
-    call(func:(selection:Selection, ...args) => any, ...args):this;
+    call(func:(selection:Selection, ...args) => void, ...args):this;
     
     /** @link https://github.com/d3/d3-selection#selection_nodes */
     nodes():Node[];
@@ -61,12 +60,12 @@ declare namespace d3 {
     each(func:$$.ValueFunction<void>):this;
     
     /** @link https://github.com/d3/d3-selection#selection_attr */
-    attr(name:string):$$.Primitive;
+    attr(name:string):any;
     attr(name:string, value:$$.Primitive):this;
     attr(name:string, value:$$.ValueFunction<$$.Primitive>):this;
     
     /** @link https://github.com/d3/d3-selection#selection_style */
-    style(name:string):$$.Primitive;
+    style(name:string):any;
     style(name:string, value:$$.Primitive, priority?:boolean):this;
     style(name:string, value:$$.ValueFunction<$$.Primitive>, priority?:boolean):this;
     
@@ -111,7 +110,7 @@ declare namespace d3 {
     datum(value:any):this;
     
     /** @link https://github.com/d3/d3-selection#selection_on */
-    on(type:string, listener?:Function, capture?:boolean):this;
+    on(type:string, listener?:$$.ValueFunction<void>, capture?:boolean):this;
     
     /** @link https://github.com/d3/d3-selection#selection_dispatch */
     dispatch(type:string, params?:$$.ValueFunction<any> | any):this;
@@ -172,7 +171,8 @@ declare namespace d3 {
   // Handling Events
   //---------------------------------------------
   /** @link https://github.com/d3/d3-selection#event */
-  export const event:Event | $$.CustomEvent;
+  // SOMEDAY any → Event | {type:string, sourceEvent:Event}
+  export var event:any;
   
   /** @link https://github.com/d3/d3-selection#customEvent */
   export function customEvent(event:Event, listener:Function, listenerThisArg?:any, listenerArguments?:any[]);
@@ -236,12 +236,12 @@ declare namespace d3 {
     transition(transition?:any):this;
     
     /** @link https://github.com/d3/d3-transition#transition_attr */
-    attr(name:string):$$.Primitive;
+    attr(name:string):any;
     attr(name:string, value:$$.Primitive):this;
     attr(name:string, value:$$.ValueFunction<$$.Primitive>):this;
     
     /** @link https://github.com/d3/d3-transition#transition_style */
-    style(name:string):$$.Primitive;
+    style(name:string):any;
     style(name:string, value:$$.Primitive, priority?:boolean):this;
     style(name:string, value:$$.ValueFunction<$$.Primitive>, priority?:boolean):this;
     
@@ -258,24 +258,32 @@ declare namespace d3 {
     selection():Selection;
     
     /** @link https://github.com/d3/d3-transition#transition_on */
+    on(type:string):$$.ValueFunction<void>;
+    on(type:string, listener:$$.ValueFunction<void>):this;
+
     on(type:'start'):$$.ValueFunction<void>;
     on(type:'start', listener:$$.ValueFunction<void>):this;
+    
     on(type:'end'):$$.ValueFunction<void>;
     on(type:'end', listener:$$.ValueFunction<void>):this;
+    
     on(type:'interrupt'):$$.ValueFunction<void>;
     on(type:'interrupt', listener:$$.ValueFunction<void>):this;
     
     /** @link https://github.com/d3/d3-transition#transition_attrTween */
     attrTween(name:string):$$.ValueFunction<(t:number) => any>;
+    attrTween(name:string, value:(t:number) => any):this;
     attrTween(name:string, value:$$.ValueFunction<(t:number) => any>):this;
     
     /** @link https://github.com/d3/d3-transition#transition_styleTween */
     styleTween(name:string):$$.ValueFunction<(t:number) => any>;
+    styleTween(name:string, value:(t:number) => any, priority?:boolean):this;
     styleTween(name:string, value:$$.ValueFunction<(t:number) => any>, priority?:boolean):this;
     
     /** @link https://github.com/d3/d3-transition#transition_tween */
-    tween(name:string):$$.ValueFunction<(t:number) => any>;
-    tween(name:string, value:$$.ValueFunction<(t:number) => any>):this;
+    tween(name:string):$$.ValueFunction<(t:number) => void>;
+    tween(name:string, value:(t:number) => void):this;
+    tween(name:string, value:$$.ValueFunction<(t:number) => void>):this;
     
     /** @link https://github.com/d3/d3-transition#transition_delay */
     delay():number;

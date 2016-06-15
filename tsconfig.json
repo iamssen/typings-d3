@@ -13,6 +13,6 @@
   },
 
   "files": [
-    "test/d3-array.ts"
+    "tests/d3-array.ts"
   ]
 }
