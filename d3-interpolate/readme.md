@@ -28,7 +28,7 @@ Map `d3-interpolate.min.js` file to `~/src/system-config.ts`
 ```typescript
 /** Map relative paths to URLs. */
 const map: any = {
-  'd3-interpolate': 'vendor/d3-array/build/d3-interpolate.min.js'
+  'd3-interpolate': 'vendor/d3-interpolate/build/d3-interpolate.min.js'
 };
 ```
 
