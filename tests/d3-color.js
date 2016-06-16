@@ -1,7 +1,7 @@
 const test = require('tape');
 const {accept, reject} = require('./declaration-checker')();
 
-test('d3.rgb', t => {
+test('d3.rgb, d3.hsl, d3.hcl, d3.cubehelix', t => {
   t.error(accept(/* language=TypeScript */ `
     import * as d3 from "../d3-color";
     const a:d3.Rgb = d3.rgb('#ffffff');
