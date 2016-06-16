@@ -24,12 +24,12 @@ test('d3.min, d3.max', t => {
     t.error(reject(`
       import * as d3 from '../d3-array';
       const a:number = d3.${name}(1);
-    `), 'args[0] can not get 1')
+    `), 'args[0] can not receive 1')
 
     t.error(reject(`
       import * as d3 from '../d3-array';
       const a:number = d3.${name}([true]);
-    `), 'args[0] can not get [true]')
+    `), 'args[0] can not receive [true]')
 
     t.error(reject(`
       import * as d3 from '../d3-array';
@@ -66,12 +66,12 @@ test('d3.extent', t => {
   t.error(reject(/* language=TypeScript */ `
     import * as d3 from '../d3-array';
     const a:[number, number] = d3.extent(1);
-  `), 'args[0] can not get 1')
+  `), 'args[0] can not receive 1')
 
   t.error(reject(/* language=TypeScript */ `
     import * as d3 from '../d3-array';
     const a:[number, number] = d3.extent([true]);
-  `), 'args[0] can not get [true]')
+  `), 'args[0] can not receive [true]')
 
   t.error(reject(/* language=TypeScript */ `
     import * as d3 from '../d3-array';
@@ -117,12 +117,12 @@ test('d3.sum, d3.mean, d3.median, d3.variance, d3.deviation', t => {
     t.error(reject(`
       import * as d3 from '../d3-array';
       const a:number = d3.${name}(1);
-    `), 'args[0] can not get 1')
+    `), 'args[0] can not receive 1')
 
     t.error(reject(`
       import * as d3 from '../d3-array';
       const a:number = d3.${name}(['a']);
-    `), 'args[0] can not get ["a"]')
+    `), 'args[0] can not receive ["a"]')
 
     t.error(reject(`
       import * as d3 from '../d3-array';
@@ -159,12 +159,12 @@ test('d3.quantile', t => {
   t.error(reject(/* language=TypeScript */ `
     import * as d3 from '../d3-array';
     const a:number = d3.quantile(1, 0.5);
-  `), 'args[0] can not get 1')
+  `), 'args[0] can not receive 1')
 
   t.error(reject(/* language=TypeScript */ `
     import * as d3 from '../d3-array';
     const a:number = d3.quantile(['a'], 0.5);
-  `), 'args[0] can not get ["a"]')
+  `), 'args[0] can not receive ["a"]')
 
   t.error(reject(/* language=TypeScript */ `
     import * as d3 from '../d3-array';

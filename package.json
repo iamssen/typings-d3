@@ -3,8 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "test": "tape tests/d3-selection.js",
-    "test-build": "tsc"
+    "test": "tape tests/d3-*.js"
   },
   "devDependencies": {
     "chalk": "^1.1.3",

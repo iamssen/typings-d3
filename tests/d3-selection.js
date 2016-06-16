@@ -63,6 +63,8 @@ test('d3.selection, d3.select, d3.selectAll', t => {
 test('d3.Selection', t => {
   t.error(accept(/* language=TypeScript */ `
     import * as d3 from "../d3-selection";
+    
+    type Custom = {a:number, b:number};
 
     const node:Node = document.querySelector('.a');
     const nodes:NodeListOf<Node> = document.querySelectorAll('.a');
@@ -74,21 +76,25 @@ test('d3.Selection', t => {
       .select((d:any) => node)
       .select((d:any, i:number) => node)
       .select((d:any, i:number, nodes:Node[]) => node)
+      .select((d:Custom, i:number, nodes:Node[]) => node)
       .selectAll('a')
       .selectAll(nodes)
       .selectAll(() => nodes)
       .selectAll((d:any) => nodes)
       .selectAll((d:any, i:number) => nodes)
       .selectAll((d:any, i:number, nodes:Node[]) => nodes)
+      .selectAll((d:Custom, i:number, nodes:Node[]) => nodes)
       .filter(() => true)
       .filter((d:any) => true)
       .filter((d:any, i:number) => true)
       .filter((d:any, i:number, nodes:Node[]) => true)
+      .filter((d:Custom, i:number, nodes:Node[]) => true)
       .data([1, 2, 3])
       .data(() => [1, 2, 3])
       .data((d:any) => [1, 2, 3])
       .data((d:any, i:number) => [1, 2, 3])
       .data((d:any, i:number, nodes:Node[]) => [1, 2, 3])
+      .data((d:Custom, i:number, nodes:Node[]) => [1, 2, 3])
       .call((selection:d3.Selection) => { /* todo */ })
       .call((selection:d3.Selection) => { /* todo */ }, 1, 2, 3)
       .call((selection:d3.Selection, ...arg) => { /* todo */ })
@@ -97,6 +103,7 @@ test('d3.Selection', t => {
       .each((d:any) => { /* todo */ })
       .each((d:any, i:number) => { /* todo */ })
       .each((d:any, i:number, nodes:Node[]) => { /* todo */ })
+      .each((d:Custom, i:number, nodes:Node[]) => { /* todo */ })
       .attr('font-size', '10')
       .attr('font-size', 10)
       .attr('font-size', true)
@@ -104,6 +111,7 @@ test('d3.Selection', t => {
       .attr('font-size', (d:any) => 10)
       .attr('font-size', (d:any, i:number) => 10)
       .attr('font-size', (d:any, i:number, nodes:Node[]) => 10)
+      .attr('font-size', (d:Custom, i:number, nodes:Node[]) => 10)
       .style('fontSize', '10px')
       .style('fontSize', 10)
       .style('fontSize', true)
@@ -113,31 +121,37 @@ test('d3.Selection', t => {
       .style('fontSize', (d:any, i:number) => 10)
       .style('fontSize', (d:any, i:number, nodes:Node[]) => 10)
       .style('fontSize', (d:any) => 10, true)
+      .style('fontSize', (d:Custom) => 10, true)
       .text('hello world')
       .text(() => 'hello world')
       .text((d:any) => 'hello world')
       .text((d:any, i:number) => 'hello world')
       .text((d:any, i:number, nodes:Node[]) => 'hello world')
+      .text((d:Custom, i:number, nodes:Node[]) => 'hello world')
       .html('hello world')
       .html(() => 'hello world')
       .html((d:any) => 'hello world')
       .html((d:any, i:number) => 'hello world')
       .html((d:any, i:number, nodes:Node[]) => 'hello world')
+      .html((d:Custom, i:number, nodes:Node[]) => 'hello world')
       .append('a')
       .append(() => node)
       .append((d:any) => node)
       .append((d:any, i:number) => node)
       .append((d:any, i:number, nodes:Node[]) => node)
+      .append((d:Custom, i:number, nodes:Node[]) => node)
       .insert('a', node)
       .insert(() => node, node)
       .insert((d:any) => node, node)
       .insert((d:any, i:number) => node, node)
       .insert((d:any, i:number, nodes:Node[]) => node, node)
+      .insert((d:Custom, i:number, nodes:Node[]) => node, node)
       .datum([1, 2, 3])
       .on('click', () => { /* todo */ }, true)
       .on('click', (d:any) => { /* todo */ })
       .on('click', (d:any, i:number) => { /* todo */ })
       .on('click', (d:any, i:number, nodes:Node[]) => { /* todo */ })
+      .on('click', (d:Custom, i:number, nodes:Node[]) => { /* todo */ })
       
     const x:d3.Selection = d3.selection()
     
@@ -234,6 +248,8 @@ test('d3.event, d3.customEvent, d3.mouse, d3.touch, d3.touches', t => {
 test('d3.Transition', t => {
   t.error(accept(/* language=TypeScript */ `
     import * as d3 from "../d3-selection";
+    
+    type Custom = {a:number, b:number};
 
     const node:Node = document.querySelector('.a');
     const nodes:NodeListOf<Node> = document.querySelectorAll('.a');
@@ -245,16 +261,19 @@ test('d3.Transition', t => {
       .select((d:any) => node)
       .select((d:any, i:number) => node)
       .select((d:any, i:number, nodes:Node[]) => node)
+      .select((d:Custom, i:number, nodes:Node[]) => node)
       .selectAll('a')
       .selectAll(nodes)
       .selectAll(() => nodes)
       .selectAll((d:any) => nodes)
       .selectAll((d:any, i:number) => nodes)
       .selectAll((d:any, i:number, nodes:Node[]) => nodes)
+      .selectAll((d:Custom, i:number, nodes:Node[]) => nodes)
       .filter(() => true)
       .filter((d:any) => true)
       .filter((d:any, i:number) => true)
       .filter((d:any, i:number, nodes:Node[]) => true)
+      .filter((d:Custom, i:number, nodes:Node[]) => true)
       .call((selection:d3.Selection) => { /* todo */ })
       .call((selection:d3.Selection) => { /* todo */ }, 1, 2, 3)
       .call((selection:d3.Selection, ...arg) => { /* todo */ })
@@ -263,6 +282,7 @@ test('d3.Transition', t => {
       .each((d:any) => { /* todo */ })
       .each((d:any, i:number) => { /* todo */ })
       .each((d:any, i:number, nodes:Node[]) => { /* todo */ })
+      .each((d:Custom, i:number, nodes:Node[]) => { /* todo */ })
       .attr('font-size', '10')
       .attr('font-size', 10)
       .attr('font-size', true)
@@ -270,6 +290,7 @@ test('d3.Transition', t => {
       .attr('font-size', (d:any) => 10)
       .attr('font-size', (d:any, i:number) => 10)
       .attr('font-size', (d:any, i:number, nodes:Node[]) => 10)
+      .attr('font-size', (d:Custom, i:number, nodes:Node[]) => 10)
       .style('fontSize', '10px')
       .style('fontSize', 10)
       .style('fontSize', true)
@@ -279,29 +300,35 @@ test('d3.Transition', t => {
       .style('fontSize', (d:any, i:number) => 10)
       .style('fontSize', (d:any, i:number, nodes:Node[]) => 10)
       .style('fontSize', (d:any) => 10, true)
+      .style('fontSize', (d:Custom) => 10, true)
       .text('hello world')
       .text(() => 'hello world')
       .text((d:any) => 'hello world')
       .text((d:any, i:number) => 'hello world')
       .text((d:any, i:number, nodes:Node[]) => 'hello world')
+      .text((d:Custom, i:number, nodes:Node[]) => 'hello world')
       .on('start', () => { /* todo */ })
       .on('start', (d:any) => { /* todo */ })
       .on('start', (d:any, i:number) => { /* todo */ })
       .on('start', (d:any, i:number, nodes:Node[]) => { /* todo */ })
+      .on('start', (d:Custom, i:number, nodes:Node[]) => { /* todo */ })
       .attrTween('font-size', (t:number) => 10 * t)
       .attrTween('font-size', () => (t:number) => 10 * t)
       .attrTween('font-size', (d:any) => (t:number) => 10 * t)
       .attrTween('font-size', (d:any, i:number) => (t:number) => 10 * t)
       .attrTween('font-size', (d:any, i:number, nodes:Node[]) => (t:number) => 10 * t)
+      .attrTween('font-size', (d:Custom, i:number, nodes:Node[]) => (t:number) => 10 * t)
       .styleTween('fontSize', (t:number) => 10 * t)
       .styleTween('fontSize', () => (t:number) => 10 * t)
       .styleTween('fontSize', (d:any) => (t:number) => 10 * t)
       .styleTween('fontSize', (d:any, i:number) => (t:number) => 10 * t)
       .styleTween('fontSize', (d:any, i:number, nodes:Node[]) => (t:number) => 10 * t)
+      .styleTween('fontSize', (d:Custom, i:number, nodes:Node[]) => (t:number) => 10 * t)
       .tween('?', () => (t:number) => { /* todo */ })
       .tween('?', (d:any) => (t:number) => { /* todo */ })
       .tween('?', (d:any, i:number) => (t:number) => { /* todo */ })
       .tween('?', (d:any, i:number, nodes:Node[]) => (t:number) => { /* todo */ })
+      .tween('?', (d:Custom, i:number, nodes:Node[]) => (t:number) => { /* todo */ })
       .delay(3)
       .delay(() => 4)
       .duration(3)
@@ -317,22 +344,7 @@ test('d3.Transition', t => {
     const f:string = x.style('fontSize')
     const g:boolean = x.style('fontSize')
     const h:string = x.text()
-      
   `), 'available syntaxes')
 
   t.end()
 })
-
-// test('d3.', t => {
-//   t.error(accept(/* language=TypeScript */ `
-//   `), '')
-//
-//   t.end()
-// })
-
-// test('d3.', t => {
-//   t.error(accept(/* language=TypeScript */ `
-//   `), '')
-//
-//   t.end()
-// })
