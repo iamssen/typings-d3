@@ -20,7 +20,8 @@ Using with [angular-cli]
 Add this line to `~/angular-cli-build.js` file.
 
 ```js
-'d3-interpolate/build/d3-interpolate.min.js'
+'d3-color/build/d3-color.min.js', // dependent module
+'d3-interpolate/build/d3-interpolate.min.js' // d3-interpolate
 ```
 
 Map `d3-interpolate.min.js` file to `~/src/system-config.ts`
@@ -28,7 +29,8 @@ Map `d3-interpolate.min.js` file to `~/src/system-config.ts`
 ```typescript
 /** Map relative paths to URLs. */
 const map: any = {
-  'd3-interpolate': 'vendor/d3-interpolate/build/d3-interpolate.min.js'
+  'd3-color': 'vendor/d3-color/build/d3-color.min.js', // dependent module
+  'd3-interpolate': 'vendor/d3-interpolate/build/d3-interpolate.min.js' // d3-interpolate
 };
 ```
 

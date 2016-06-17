@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "test": "tape tests/*.js"
+    "test": "tape tests/*.js",
+    "dev-run": "tape tests/d3-scale.js"
   },
   "devDependencies": {
     "declaration-syntax-tester": "^0.1.2",
