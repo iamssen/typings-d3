@@ -1,5 +1,5 @@
 const test = require('tape');
-const {accept, reject} = require('./declaration-checker')();
+const {accept, reject} = require('declaration-syntax-tester')();
 
 test('d3.min, d3.max', t => {
   ['min', 'max'].forEach(name => {

@@ -1,5 +1,5 @@
 const test = require('tape');
-const {accept, reject} = require('./declaration-checker')();
+const {accept, reject} = require('declaration-syntax-tester')();
 
 test('d3.local', t => {
   t.error(accept(/* language=TypeScript */ `
