@@ -1,0 +1,5 @@
+{
+  "name": "d3-shape",
+  "version": "0.7.1",
+  "main": "./index.d.ts"
+}

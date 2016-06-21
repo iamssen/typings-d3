@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "test": "tape tests/*.js",
-    "dev-run": "tape tests/d3-scale.js"
+    "dev-run": "tape tests/d3-shape.js"
   },
   "devDependencies": {
     "declaration-syntax-tester": "^0.1.2",

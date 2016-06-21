@@ -8,3 +8,5 @@
 - [d3-interpolate](d3-interpolate)
 - [d3-path](d3-path)
 - [d3-polygon](d3-polygon)
+- [d3-scale](d3-scale)
+- [d3-shape](d3-shape)
