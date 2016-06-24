@@ -111,7 +111,7 @@ export interface Sequential {
 }
 
 /** @link https://github.com/d3/d3-scale#scaleSequential */
-export function scaleSequential(interpolate:(t:number)=>any):Sequential;
+export function scaleSequential(interpolator:(t:number)=>any):Sequential;
 
 /** @link https://github.com/d3/d3-scale#interpolateViridis */
 export function interpolateViridis(t:number):string;
