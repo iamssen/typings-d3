@@ -5,7 +5,7 @@
   "scripts" : {
     "test" : "tape tests/*.js",
     "outdated" : "node outdated.js",
-    "dev-run" : "tape tests/d3-axis.js"
+    "dev-run" : "tape tests/d3-hierarchy.js"
   },
   "devDependencies" : {
     "chalk" : "^1.1.3",
