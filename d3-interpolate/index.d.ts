@@ -90,6 +90,9 @@ export function interpolateBasis(values:number[]):(t:number) => number;
 /** @link https://github.com/d3/d3-interpolate#interpolateBasisClosed */
 export function interpolateBasisClosed(values:number[]):(t:number) => number;
 
+/** @link https://github.com/d3/d3-interpolate#interpolateDate */
+export function interpolateDate(values:Date[]):(t:number) => Date;
+
 /**
  * ```
  * const x = d3.quantize(t => Math.round(t * 100), 10)
@@ -107,4 +110,4 @@ export function interpolateBasisClosed(values:number[]):(t:number) => number;
  *
  * @link https://github.com/d3/d3-interpolate#quantize
  */
-export function quantize<T>(interpolate:(t:number) => T, length:number):T[];
+export function quantize<T>(interpolator:(t:number) => T, length:number):T[];

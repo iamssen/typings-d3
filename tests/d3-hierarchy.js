@@ -30,7 +30,7 @@ test('d3.hierarchy', t => {
     ]}
   
     const a:d3.Node<Data> = d3.hierarchy<Data>(data)
-                              .sum((d:d3.Node<Data>) => 0)
+                              .sum((d:Data) => 0)
                               .sort((a:Data, b:Data) => 1)
                               .each((d:d3.Node<Data>) => console.log(d))
                               .eachAfter((d:d3.Node<Data>) => console.log(d))

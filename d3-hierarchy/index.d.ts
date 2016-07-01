@@ -114,7 +114,7 @@ export interface Node<T> {
   links():Link<T>[];
 
   /** @link https://github.com/d3/d3-hierarchy#node_sum */
-  sum(fn:(d:Node<T>) => number):this;
+  sum(fn:(d:T) => number):this;
 
   /** @link https://github.com/d3/d3-hierarchy#node_sort */
   sort(compare:(a:T, b:T) => number):this;
