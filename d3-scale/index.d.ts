@@ -299,7 +299,7 @@ export interface Band<Domain> {
   bandWidth():number[];
 
   /** @link https://github.com/d3/d3-scale#band_step */
-  step():number[];
+  step():number;
 
   /** @link https://github.com/d3/d3-scale#band_copy */
   copy():this;
@@ -343,7 +343,7 @@ export interface Point<Domain> {
   bandWidth():number[];
 
   /** @link https://github.com/d3/d3-scale#point_step */
-  step():number[];
+  step():number;
 
   /** @link https://github.com/d3/d3-scale#point_copy */
   copy():this;
