@@ -296,7 +296,7 @@ export interface Band<Domain> {
   align(align:number):this;
 
   /** @link https://github.com/d3/d3-scale#band_bandwidth */
-  bandWidth():number;
+  bandwidth():number;
 
   /** @link https://github.com/d3/d3-scale#band_step */
   step():number;
@@ -340,7 +340,7 @@ export interface Point<Domain> {
   align(align:number):this;
 
   /** @link https://github.com/d3/d3-scale#point_bandwidth */
-  bandWidth():number;
+  bandwidth():number;
 
   /** @link https://github.com/d3/d3-scale#point_step */
   step():number;
