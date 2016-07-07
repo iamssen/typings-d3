@@ -33,6 +33,23 @@ test('continuous scales', t => {
     const c:d3.Identity = d3.scaleIdentity();
     const d:d3.Time = d3.scaleTime().nice(1000);
   `), 'pow, log, identity, time');
+  
+  t.error(accept(/* language=TypeScript */ `
+    import * as d3 from '../d3-scale';
+    const x:d3.Time = d3.scaleTime()
+                        .domain([new Date, new Date])
+                        .range([0, 100])
+                        .clamp(true)
+                        .nice();
+    const a:number = x(new Date);
+    const b:Date = x.invert(50);
+    const c:Date[] = x.domain();
+    const d:number[] = x.range();
+    const e:number[] = x.ticks(5);
+    const f:(n:number) => string = x.tickFormat(3);
+    
+    const cast:d3.ContinuousBase<Date, number> = x;
+  `), 'time scale');
 
   t.error(reject(/* language=TypeScript */ `
     import * as d3 from '../d3-scale';

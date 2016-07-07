@@ -1,7 +1,7 @@
 //----------------------------------------------------------------
 // Continuous Scales
 //----------------------------------------------------------------
-export interface ContinuousBase<Range, Domain> {
+export interface ContinuousBase<Domain, Range> {
   /** @link https://github.com/d3/d3-scale#_continuous */
   (x:Domain):Range;
 
@@ -29,7 +29,7 @@ export interface ContinuousBase<Range, Domain> {
   copy():this;
 }
 
-export interface Continuous<Range, Domain> extends ContinuousBase<Range, Domain> {
+export interface Continuous<Domain, Range> extends ContinuousBase<Domain, Range> {
   /** @link https://github.com/d3/d3-scale#continuous_rangeRound */
   rangeRound():Range[];
   rangeRound(range:Range[]):this;
@@ -43,14 +43,14 @@ export interface Continuous<Range, Domain> extends ContinuousBase<Range, Domain>
 }
 
 // Linear Scales
-export interface Linear<Range> extends Continuous<Range, number> {
+export interface Linear<Range> extends Continuous<number, Range> {
 }
 
 /** @link https://github.com/d3/d3-scale#scaleLinear */
 export function scaleLinear<Range>():Linear<Range>;
 
 // Power Scales
-export interface Pow<Range> extends Continuous<Range, number> {
+export interface Pow<Range> extends Continuous<number, Range> {
   /** @link https://github.com/d3/d3-scale#pow_exponent */
   exponent():number;
   exponent(k:number):this;
@@ -63,7 +63,7 @@ export function scalePow<Range>():Pow<Range>;
 export function scaleSqrt<Range>():Pow<Range>;
 
 // Log Scales
-export interface Log<Range> extends Continuous<Range, number> {
+export interface Log<Range> extends Continuous<number, Range> {
   /** @link https://github.com/d3/d3-scale#log_base */
   base():number;
   base(base:number):this;
@@ -80,7 +80,7 @@ export interface Identity extends ContinuousBase<number, number> {
 export function scaleIdentity():Identity;
 
 // Time Scales
-export interface Time extends Continuous<number, Date> {
+export interface Time extends Continuous<Date, number> {
   /** @link https://github.com/d3/d3-scale#time_nice */
   nice(interval?:number, step?:number):this;
 }
