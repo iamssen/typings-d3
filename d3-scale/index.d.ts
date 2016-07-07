@@ -1,16 +1,16 @@
 //----------------------------------------------------------------
 // Continuous Scales
 //----------------------------------------------------------------
-export interface ContinuousBase<Range> {
+export interface ContinuousBase<Range, Domain> {
   /** @link https://github.com/d3/d3-scale#_continuous */
-  (x:number):Range;
+  (x:Domain):Range;
 
   /** @link https://github.com/d3/d3-scale#continuous_invert */
-  invert(x:Range):number;
+  invert(x:Range):Domain;
 
   /** @link https://github.com/d3/d3-scale#continuous_domain */
-  domain():number[];
-  domain(domain:number[]):this;
+  domain():Domain[];
+  domain(domain:Domain[]):this;
 
   /** @link https://github.com/d3/d3-scale#continuous_range */
   range():Range[];
@@ -29,7 +29,7 @@ export interface ContinuousBase<Range> {
   copy():this;
 }
 
-export interface Continuous<Range> extends ContinuousBase<Range> {
+export interface Continuous<Range, Domain> extends ContinuousBase<Range, Domain> {
   /** @link https://github.com/d3/d3-scale#continuous_rangeRound */
   rangeRound():Range[];
   rangeRound(range:Range[]):this;
@@ -43,14 +43,14 @@ export interface Continuous<Range> extends ContinuousBase<Range> {
 }
 
 // Linear Scales
-export interface Linear<Range> extends Continuous<Range> {
+export interface Linear<Range> extends Continuous<Range, number> {
 }
 
 /** @link https://github.com/d3/d3-scale#scaleLinear */
 export function scaleLinear<Range>():Linear<Range>;
 
 // Power Scales
-export interface Pow<Range> extends Continuous<Range> {
+export interface Pow<Range> extends Continuous<Range, number> {
   /** @link https://github.com/d3/d3-scale#pow_exponent */
   exponent():number;
   exponent(k:number):this;
@@ -63,7 +63,7 @@ export function scalePow<Range>():Pow<Range>;
 export function scaleSqrt<Range>():Pow<Range>;
 
 // Log Scales
-export interface Log<Range> extends Continuous<Range> {
+export interface Log<Range> extends Continuous<Range, number> {
   /** @link https://github.com/d3/d3-scale#log_base */
   base():number;
   base(base:number):this;
@@ -73,14 +73,14 @@ export interface Log<Range> extends Continuous<Range> {
 export function scaleLog<Range>():Log<Range>;
 
 // Identity Scales
-export interface Identity extends ContinuousBase<number> {
+export interface Identity extends ContinuousBase<number, number> {
 }
 
 /** @link https://github.com/d3/d3-scale#scaleIdentity */
 export function scaleIdentity():Identity;
 
 // Time Scales
-export interface Time extends Continuous<Date> {
+export interface Time extends Continuous<number, Date> {
   /** @link https://github.com/d3/d3-scale#time_nice */
   nice(interval?:number, step?:number):this;
 }
