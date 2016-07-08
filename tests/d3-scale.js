@@ -194,10 +194,12 @@ test('ordinal scales', t => {
 
   t.error(accept(/* language=TypeScript */ `
     import * as d3 from '../d3-scale';
-    const a:d3.Ordinal<string, number> = d3.scaleOrdinal<string, number>(d3.schemeCategory10);
-    const b:d3.Ordinal<string, number> = d3.scaleOrdinal<string, number>(d3.schemeCategory20);
-    const c:d3.Ordinal<string, number> = d3.scaleOrdinal<string, number>(d3.schemeCategory20b);
-    const d:d3.Ordinal<string, number> = d3.scaleOrdinal<string, number>(d3.schemeCategory20c);
+    const a:d3.Ordinal<number, string> = d3.scaleOrdinal<number, string>(d3.schemeCategory10);
+    const b:d3.Ordinal<number, string> = d3.scaleOrdinal<number, string>(d3.schemeCategory20);
+    const c:d3.Ordinal<number, string> = d3.scaleOrdinal<number, string>(d3.schemeCategory20b);
+    const d:d3.Ordinal<number, string> = d3.scaleOrdinal<number, string>(d3.schemeCategory20c);
+    
+    const e:string = a(10);
   `), 'with schemeCategory');
 
   t.end()

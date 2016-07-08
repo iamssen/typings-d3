@@ -356,13 +356,13 @@ export function scalePoint<Domain>():Point<Domain>;
 // Category Scales
 //----------------------------------------------------------------
 /** @link https://github.com/d3/d3-scale#schemeCategory10 */
-export const schemeCategory10:number[];
+export const schemeCategory10:string[];
 
 /** @link https://github.com/d3/d3-scale#schemeCategory20 */
-export const schemeCategory20:number[];
+export const schemeCategory20:string[];
 
 /** @link https://github.com/d3/d3-scale#schemeCategory20b */
-export const schemeCategory20b:number[];
+export const schemeCategory20b:string[];
 
 /** @link https://github.com/d3/d3-scale#schemeCategory20c */
-export const schemeCategory20c:number[];
+export const schemeCategory20c:string[];
