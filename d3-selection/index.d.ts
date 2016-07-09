@@ -11,16 +11,63 @@ export namespace $$ {
   }
 }
 
-// Virtual type for Selection - d3.select(), d3.selectAll()
-export interface Selection {
+export interface BaseSelection {
+  /** @link https://github.com/d3/d3-selection#selection_nodes */
+  nodes():Node[];
+  
+  /** @link https://github.com/d3/d3-selection#selection_node */
+  node():Node;
+  
+  /** @link https://github.com/d3/d3-selection#selection_size */
+  size():number;
+  
+  /** @link https://github.com/d3/d3-selection#selection_empty */
+  empty():boolean;
+  
+  /** @link https://github.com/d3/d3-selection#selection_each */
+  each(func:$$.ValueFunction<void>):this;
+  
   /** @link https://github.com/d3/d3-selection#selection_select */
   select(selector:$$.Selector | $$.ValueFunction<Node>):this;
-
+  
   /** @link https://github.com/d3/d3-selection#selection_selectAll */
   selectAll(selector:$$.SelectorAll | $$.ValueFunction<Node[] | NodeListOf<Node>>):this;
-
+  
   /** @link https://github.com/d3/d3-selection#selection_filter */
   filter(filter:$$.ValueFunction<boolean>):this;
+  
+  /** @link https://github.com/d3/d3-selection#selection_merge */
+  merge(otherSelection:BaseSelection):this;
+  
+  /** @link https://github.com/d3/d3-selection#selection_attr */
+  attr(name:string):any;
+  attr(name:string, value:$$.Primitive):this;
+  attr(name:string, value:$$.ValueFunction<$$.Primitive>):this;
+  
+  /** @link https://github.com/d3/d3-selection#selection_style */
+  style(name:string):any;
+  style(name:string, value:$$.Primitive, priority?:boolean):this;
+  style(name:string, value:$$.ValueFunction<$$.Primitive>, priority?:boolean):this;
+  
+  /** @link https://github.com/d3/d3-selection#selection_text */
+  text():string;
+  text(value:string):this;
+  text(value:$$.ValueFunction<string>):this;
+  
+  /** @link https://github.com/d3/d3-selection#selection_remove */
+  remove():this;
+}
+
+// Virtual type for Selection - d3.select(), d3.selectAll()
+export interface Selection extends BaseSelection {
+  // /** @link https://github.com/d3/d3-selection#selection_select */
+  // select(selector:$$.Selector | $$.ValueFunction<Node>):this;
+  //
+  // /** @link https://github.com/d3/d3-selection#selection_selectAll */
+  // selectAll(selector:$$.SelectorAll | $$.ValueFunction<Node[] | NodeListOf<Node>>):this;
+  //
+  // /** @link https://github.com/d3/d3-selection#selection_filter */
+  // filter(filter:$$.ValueFunction<boolean>):this;
 
   data():any[];
   data(value:any[] | $$.ValueFunction<any>, key?:$$.ValueFunction<any>):this;
@@ -31,8 +78,8 @@ export interface Selection {
   /** @link https://github.com/d3/d3-selection#selection_exit */
   exit():this;
 
-  /** @link https://github.com/d3/d3-selection#selection_merge */
-  merge(otherSelection:Selection):this;
+  // /** @link https://github.com/d3/d3-selection#selection_merge */
+  // merge(otherSelection:Selection):this;
 
   /** @link https://github.com/d3/d3-selection#selection_order */
   order():this;
@@ -43,30 +90,30 @@ export interface Selection {
   /** @link https://github.com/d3/d3-selection#selection_call */
   call(func:(selection:Selection, ...args) => void, ...args):this;
 
-  /** @link https://github.com/d3/d3-selection#selection_nodes */
-  nodes():Node[];
+  // /** @link https://github.com/d3/d3-selection#selection_nodes */
+  // nodes():Node[];
+  //
+  // /** @link https://github.com/d3/d3-selection#selection_node */
+  // node():Node;
+  //
+  // /** @link https://github.com/d3/d3-selection#selection_size */
+  // size():number;
+  //
+  // /** @link https://github.com/d3/d3-selection#selection_empty */
+  // empty():boolean;
+  //
+  // /** @link https://github.com/d3/d3-selection#selection_each */
+  // each(func:$$.ValueFunction<void>):this;
 
-  /** @link https://github.com/d3/d3-selection#selection_node */
-  node():Node;
-
-  /** @link https://github.com/d3/d3-selection#selection_size */
-  size():number;
-
-  /** @link https://github.com/d3/d3-selection#selection_empty */
-  empty():boolean;
-
-  /** @link https://github.com/d3/d3-selection#selection_each */
-  each(func:$$.ValueFunction<void>):this;
-
-  /** @link https://github.com/d3/d3-selection#selection_attr */
-  attr(name:string):any;
-  attr(name:string, value:$$.Primitive):this;
-  attr(name:string, value:$$.ValueFunction<$$.Primitive>):this;
-
-  /** @link https://github.com/d3/d3-selection#selection_style */
-  style(name:string):any;
-  style(name:string, value:$$.Primitive, priority?:boolean):this;
-  style(name:string, value:$$.ValueFunction<$$.Primitive>, priority?:boolean):this;
+  // /** @link https://github.com/d3/d3-selection#selection_attr */
+  // attr(name:string):any;
+  // attr(name:string, value:$$.Primitive):this;
+  // attr(name:string, value:$$.ValueFunction<$$.Primitive>):this;
+  //
+  // /** @link https://github.com/d3/d3-selection#selection_style */
+  // style(name:string):any;
+  // style(name:string, value:$$.Primitive, priority?:boolean):this;
+  // style(name:string, value:$$.ValueFunction<$$.Primitive>, priority?:boolean):this;
 
   /** @link https://github.com/d3/d3-selection#selection_property */
   property(name:string):any;
@@ -78,10 +125,10 @@ export interface Selection {
   classed(name:string, value:boolean):this;
   classed(name:string, value:$$.ValueFunction<boolean>):this;
 
-  /** @link https://github.com/d3/d3-selection#selection_text */
-  text():string;
-  text(value:string):this;
-  text(value:$$.ValueFunction<string>):this;
+  // /** @link https://github.com/d3/d3-selection#selection_text */
+  // text():string;
+  // text(value:string):this;
+  // text(value:$$.ValueFunction<string>):this;
 
   /** @link https://github.com/d3/d3-selection#selection_html */
   html():string;
@@ -101,8 +148,8 @@ export interface Selection {
   /** @link https://github.com/d3/d3-selection#selection_insert */
   insert(type:string | $$.ValueFunction<Node>, before?:$$.Selector | $$.ValueFunction<Node>):this;
 
-  /** @link https://github.com/d3/d3-selection#selection_remove */
-  remove():this;
+  // /** @link https://github.com/d3/d3-selection#selection_remove */
+  // remove():this;
 
   /** @link https://github.com/d3/d3-selection#selection_datum */
   datum():any;
@@ -198,59 +245,59 @@ export const namespaces:{[name:string]:string};
 //================================================================
 // import 'd3-transition'
 //================================================================
-export interface Transition {
+export interface Transition extends BaseSelection {
   // same as the Selection
   /** @link https://github.com/d3/d3-transition#transition_call */
   call(func:(selection:Selection, ...args) => any, ...args):this;
 
-  /** @link https://github.com/d3/d3-transition#transition_nodes */
-  nodes():Node[];
+  // /** @link https://github.com/d3/d3-transition#transition_nodes */
+  // nodes():Node[];
+  //
+  // /** @link https://github.com/d3/d3-transition#transition_node */
+  // node():Node;
+  //
+  // /** @link https://github.com/d3/d3-transition#transition_size */
+  // size():number;
+  //
+  // /** @link https://github.com/d3/d3-transition#transition_empty */
+  // empty():boolean;
+  //
+  // /** @link https://github.com/d3/d3-transition#transition_each */
+  // each(func:$$.ValueFunction<void>):this;
 
-  /** @link https://github.com/d3/d3-transition#transition_node */
-  node():Node;
-
-  /** @link https://github.com/d3/d3-transition#transition_size */
-  size():number;
-
-  /** @link https://github.com/d3/d3-transition#transition_empty */
-  empty():boolean;
-
-  /** @link https://github.com/d3/d3-transition#transition_each */
-  each(func:$$.ValueFunction<void>):this;
-
-  // like as the Selection
-  /** @link https://github.com/d3/d3-transition#transition_select */
-  select(selector:$$.Selector | $$.ValueFunction<Node>):this;
-
-  /** @link https://github.com/d3/d3-transition#transition_selectAll */
-  selectAll(selector:$$.SelectorAll | $$.ValueFunction<Node[] | NodeListOf<Node>>):this;
-
-  /** @link https://github.com/d3/d3-transition#transition_filter */
-  filter(filter:$$.ValueFunction<boolean>):this;
-
-  /** @link https://github.com/d3/d3-transition#transition_merge */
-  merge(otherSelection:Selection):this;
+  // // like as the Selection
+  // /** @link https://github.com/d3/d3-transition#transition_select */
+  // select(selector:$$.Selector | $$.ValueFunction<Node>):this;
+  //
+  // /** @link https://github.com/d3/d3-transition#transition_selectAll */
+  // selectAll(selector:$$.SelectorAll | $$.ValueFunction<Node[] | NodeListOf<Node>>):this;
+  //
+  // /** @link https://github.com/d3/d3-transition#transition_filter */
+  // filter(filter:$$.ValueFunction<boolean>):this;
+  //
+  // /** @link https://github.com/d3/d3-transition#transition_merge */
+  // merge(otherSelection:Selection):this;
 
   /** @link https://github.com/d3/d3-transition#transition_transition */
   transition(transition?:any):this;
 
-  /** @link https://github.com/d3/d3-transition#transition_attr */
-  attr(name:string):any;
-  attr(name:string, value:$$.Primitive):this;
-  attr(name:string, value:$$.ValueFunction<$$.Primitive>):this;
-
-  /** @link https://github.com/d3/d3-transition#transition_style */
-  style(name:string):any;
-  style(name:string, value:$$.Primitive, priority?:boolean):this;
-  style(name:string, value:$$.ValueFunction<$$.Primitive>, priority?:boolean):this;
-
-  /** @link https://github.com/d3/d3-transition#transition_text */
-  text():string;
-  text(value:string):this;
-  text(value:$$.ValueFunction<string>):this;
-
-  /** @link https://github.com/d3/d3-transition#transition_remove */
-  remove():this; // transition end
+  // /** @link https://github.com/d3/d3-transition#transition_attr */
+  // attr(name:string):any;
+  // attr(name:string, value:$$.Primitive):this;
+  // attr(name:string, value:$$.ValueFunction<$$.Primitive>):this;
+  //
+  // /** @link https://github.com/d3/d3-transition#transition_style */
+  // style(name:string):any;
+  // style(name:string, value:$$.Primitive, priority?:boolean):this;
+  // style(name:string, value:$$.ValueFunction<$$.Primitive>, priority?:boolean):this;
+  //
+  // /** @link https://github.com/d3/d3-transition#transition_text */
+  // text():string;
+  // text(value:string):this;
+  // text(value:$$.ValueFunction<string>):this;
+  //
+  // /** @link https://github.com/d3/d3-transition#transition_remove */
+  // remove():this; // transition end
 
   // original
   /** @link https://github.com/d3/d3-transition#transition_selection */

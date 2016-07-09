@@ -348,3 +348,48 @@ test('d3.Transition', t => {
 
   t.end()
 })
+
+test('d3.BaseSelection', t => {
+  t.error(accept(/* language=TypeScript */ `
+    import * as d3 from "../d3-selection";
+    import {easeQuadOut} from '../d3-ease';
+    
+    const useTransition:boolean = true;
+    const selection:d3.Selection = d3.selectAll('div').data([]);
+    
+    let update:d3.BaseSelection;
+    
+    if (useTransition) {
+      update = selection
+        .transition()
+        .duration(100)
+        .delay(30)
+        .ease(easeQuadOut)
+    } else {
+      update = selection;
+    }
+    
+    update
+      .attr('opacity', 1)
+      .attr('fill', 'rgba(255, 255, 255, 0.8)')
+      
+    let exit:d3.BaseSelection;
+    
+    if (useTransition) {
+      exit = selection.exit()
+        .transition()
+        .duration(100)
+        .delay(30)
+        .ease(easeQuadOut)
+    } else {
+      exit = selection.exit();
+    }
+    
+    exit
+      .attr('opacity', 0)
+      .remove()
+    
+  `), 'use selection with transition.')
+
+  t.end()
+})
