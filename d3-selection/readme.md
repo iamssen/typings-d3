@@ -15,23 +15,6 @@ import {select, Selection} from 'd3-selection';
 // or import * as d3_selection from 'd3-selection';
 ```
 
-Using with [angular-cli]
-------------------------------------------------
-Add this line to `~/angular-cli-build.js` file.
-
-```js
-'d3-selection/build/d3-selection.min.js'
-```
-
-Map `d3-selection.min.js` file to `~/src/system-config.ts`
-
-```typescript
-/** Map relative paths to URLs. */
-const map: any = {
-  'd3-selection': 'vendor/d3-selection/build/d3-selection.min.js'
-};
-```
-
 [d3-transition]
 ================================================
 This definition file include [d3-transition] API.
@@ -52,4 +35,3 @@ MIT
 
 [d3-transition]: https://github.com/d3/d3-transition
 [d3-selection]: https://github.com/d3/d3-selection
-[angular-cli]: https://github.com/angular/angular-cli

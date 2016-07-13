@@ -1,23 +1,23 @@
 {
-  "name" : "typings-d3",
-  "version" : "0.0.0",
-  "license" : "MIT",
-  "scripts" : {
-    "test" : "tape tests/*.js",
-    "outdated" : "node outdated.js",
-    "dev-run" : "tape tests/d3-hierarchy.js"
+  "name": "typings-d3",
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {
+    "test": "tape tests/*.js",
+    "outdated": "node outdated.js",
+    "dev-run": "tape tests/d3-hierarchy.js"
   },
-  "devDependencies" : {
-    "chalk" : "^1.1.3",
-    "cli-table" : "^0.3.1",
-    "declaration-syntax-tester" : "^0.1.2",
-    "glob" : "^7.0.5",
-    "tape" : "^4.5.1",
-    "typescript" : "^1.8.10",
-    "version-check" : "^1.2.0"
+  "devDependencies": {
+    "chalk": "^1.1.3",
+    "cli-table": "^0.3.1",
+    "declaration-syntax-tester": "^0.1.2",
+    "glob": "^7.0.5",
+    "tape": "^4.5.1",
+    "typescript": "^1.8.10",
+    "version-check": "^1.2.0"
   },
-  "repository" : {
-    "type" : "git",
-    "url" : "https://github.com/iamssen/typings-d3.git"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iamssen/typings-d3.git"
   }
 }

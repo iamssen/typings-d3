@@ -15,27 +15,9 @@ import {interpolate} from 'd3-ease';
 // or import * as d3_interpolate from 'd3-ease';
 ```
 
-Using with [angular-cli]
-------------------------------------------------
-Add this line to `~/angular-cli-build.js` file.
-
-```js
-'d3-ease/build/d3-ease.min.js'
-```
-
-Map `d3-ease.min.js` file to `~/src/system-config.ts`
-
-```typescript
-/** Map relative paths to URLs. */
-const map: any = {
-  'd3-ease': 'vendor/d3-ease/build/d3-ease.min.js'
-};
-```
-
 License
 ================================================
 MIT
 
 
 [d3-ease]: https://github.com/d3/d3-ease
-[angular-cli]: https://github.com/angular/angular-cli

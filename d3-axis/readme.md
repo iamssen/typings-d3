@@ -15,31 +15,9 @@ import {min, max} from 'd3-axis';
 // or import * as d3_array from 'd3-axis';
 ```
 
-Using with [angular-cli]
-------------------------------------------------
-Add this line to `~/angular-cli-build.js` file.
-
-```js
-'d3-axis/build/d3-axis.min.js'
-```
-
-Map `d3-axis.min.js` file to `~/src/system-config.ts`
-
-```typescript
-/** Map relative paths to URLs. */
-const map: any = {
-  'd3-axis': 'vendor/d3-axis/build/d3-axis.min.js'
-};
-```
-
-See more...
-================================================
-- This definition is for [d3-axis] module.
-
 License
 ================================================
 MIT
 
 
 [d3-axis]: https://github.com/d3/d3-axis
-[angular-cli]: https://github.com/angular/angular-cli
