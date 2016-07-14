@@ -1,22 +1,33 @@
-Type declarations for d3.js 4.x
+Type definitions for d3.js 4.x
 ================================================
 ![travis-ci](https://travis-ci.org/iamssen/typings-d3.svg?branch=master)
-
-> **Warning!**
-> This declarations work only Typescript 2.0 and recently IDEs.
-> (ex. Webstorm 2016.2, IntelliJ 2016.2...)
 
 Install
 ------------------------------------------------
 ```bash
 npm install d3-selection d3-transition d3-array ... --save
-npm install @types/d3v4 --save
+npm install types.d3 --save
 ```
+Install d3 modules and `types.d3` module.
+
+```json
+{
+  "compilerOptions" : {
+    "typeRoots" : [ "node_modules" ],
+    "types" : [ "types.d3" ]
+  }
+}
+```
+Add `typeRoots` and `types` to your `tsconfig.json`.
+
+> tsc compiler will find `index.d.ts` files with `typeRoots` and `types`
+> it is like add `/// <reference path="${typeRoots}/${types}/index.d.ts"/>` to your ts file.
 
 ```typescript
 import {select} from 'd3-selection';
 import {min, max} from 'd3-array';
 ```
+
 
 `d3-selection` and `d3-transition`
 ------------------------------------------------
@@ -66,6 +77,6 @@ License
 MIT
 
 
-Other declarations for d3.js 4.x
+Other definitions for d3.js 4.x
 ================================================
 - [tomwanzek/d3-v4-definitelytyped](https://github.com/tomwanzek/d3-v4-definitelytyped)

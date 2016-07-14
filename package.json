@@ -1,5 +1,5 @@
 {
-  "name": "@types/d3v4",
+  "name": "types.d3",
   "version": "0.1.0",
   "description": "Type definitions for d3 4.x modules",
   "author": "Seoyeon Lee <https://github.com/iamssen>",
@@ -27,7 +27,7 @@
     "cli-table": "^0.3.1",
     "declaration-syntax-tester": "^0.1.2",
     "glob": "^7.0.5",
-    "tape": "^4.5.1",
+    "tape": "^4.6.0",
     "typescript": "^2.0.0",
     "version-check": "^1.2.0"
   },
