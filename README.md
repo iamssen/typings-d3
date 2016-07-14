@@ -34,31 +34,31 @@ select('a').transition(); // then you can use Selection.transition()
 
 Work Status
 ================================================
-- [x] [d3-array]
-- [x] [d3-axis]
-- [ ] [d3-brush]
-- [ ] [d3-chord]
-- [ ] [d3-collection]
-- [x] [d3-color]
-- [ ] [d3-dispatch]
-- [ ] [d3-drag]
-- [x] [d3-ease]
-- [ ] [d3-force]
-- [x] [d3-hierarchy]
-- [x] [d3-interpolate]
-- [x] [d3-path]
-- [x] [d3-polygon]
-- [ ] [d3-quadtree]
-- [ ] [d3-random] 🕘
-- [x] [d3-scale]
-- [x] [d3-selection]
-- [x] [d3-shape]
-- [ ] [d3-time]
-- [ ] [d3-time-format]
-- [ ] [d3-timer] 🕘
-- [x] [d3-transition]
-- [ ] [d3-voronoi]
-- [ ] [d3-zoom] 🕘
+- [x] [d3-array](https://github.com/d3/d3-array)
+- [x] [d3-axis](https://github.com/d3/d3-axis)
+- [ ] [d3-brush](https://github.com/d3/d3-brush)
+- [ ] [d3-chord](https://github.com/d3/d3-chord)
+- [ ] [d3-collection](https://github.com/d3/d3-collection)
+- [x] [d3-color](https://github.com/d3/d3-color)
+- [ ] [d3-dispatch](https://github.com/d3/d3-dispatch)
+- [ ] [d3-drag](https://github.com/d3/d3-drag)
+- [x] [d3-ease](https://github.com/d3/d3-ease)
+- [ ] [d3-force](https://github.com/d3/d3-force)
+- [x] [d3-hierarchy](https://github.com/d3/d3-hierarchy)
+- [x] [d3-interpolate](https://github.com/d3/d3-interpolate)
+- [x] [d3-path](https://github.com/d3/d3-path)
+- [x] [d3-polygon](https://github.com/d3/d3-polygon)
+- [ ] [d3-quadtree](https://github.com/d3/d3-quadtree)
+- [ ] [d3-random](https://github.com/d3/d3-random)
+- [x] [d3-scale](https://github.com/d3/d3-scale)
+- [x] [d3-selection](https://github.com/d3/d3-selection)
+- [x] [d3-shape](https://github.com/d3/d3-shape)
+- [ ] [d3-time](https://github.com/d3/d3-time)
+- [ ] [d3-time-format](https://github.com/d3/d3-time-format)
+- [ ] [d3-timer](https://github.com/d3/d3-timer)
+- [x] [d3-transition](https://github.com/d3/d3-transition)
+- [ ] [d3-voronoi](https://github.com/d3/d3-voronoi)
+- [ ] [d3-zoom](https://github.com/d3/d3-zoom)
 
 
 License
@@ -69,30 +69,3 @@ MIT
 Other declarations for d3.js 4.x
 ================================================
 - [tomwanzek/d3-v4-definitelytyped](https://github.com/tomwanzek/d3-v4-definitelytyped)
-
-
-[d3-array]: https://github.com/d3/d3-array
-[d3-axis]: https://github.com/d3/d3-axis
-[d3-brush]: https://github.com/d3/d3-brush
-[d3-chord]: https://github.com/d3/d3-chord
-[d3-collection]: https://github.com/d3/d3-collection
-[d3-color]: https://github.com/d3/d3-color
-[d3-dispatch]: https://github.com/d3/d3-dispatch
-[d3-drag]: https://github.com/d3/d3-drag
-[d3-ease]: https://github.com/d3/d3-ease
-[d3-force]: https://github.com/d3/d3-force
-[d3-hierarchy]: https://github.com/d3/d3-hierarchy
-[d3-interpolate]: https://github.com/d3/d3-interpolate
-[d3-path]: https://github.com/d3/d3-path
-[d3-polygon]: https://github.com/d3/d3-polygon
-[d3-quadtree]: https://github.com/d3/d3-quadtree
-[d3-random]: https://github.com/d3/d3-random
-[d3-scale]: https://github.com/d3/d3-scale
-[d3-selection]: https://github.com/d3/d3-selection
-[d3-shape]: https://github.com/d3/d3-shape
-[d3-time]: https://github.com/d3/d3-time
-[d3-time-format]: https://github.com/d3/d3-time-format
-[d3-timer]: https://github.com/d3/d3-timer
-[d3-transition]: https://github.com/d3/d3-transition
-[d3-voronoi]: https://github.com/d3/d3-voronoi
-[d3-zoom]: https://github.com/d3/d3-zoom
