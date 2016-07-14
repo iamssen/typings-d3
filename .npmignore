@@ -4,4 +4,6 @@
 *.log
 node_modules/
 
-/test/.*
+/test/
+/scripts/
+/.travis.yml

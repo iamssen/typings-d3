@@ -1,6 +1,0 @@
-{
-  "name": "d3-scale",
-  "version": "1.0.0",
-  "main": "./index.d.ts",
-  "homepage": "https://github.com/d3/d3-scale"
-}
