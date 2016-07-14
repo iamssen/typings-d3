@@ -13,6 +13,13 @@
 - [d3-shape](d3-shape)
 - [d3-transition](d3-transition)
 
+# NPM based declarations for Typescript 2.0
+
+This declarations will move to npm `@types/d3v4`.
+
+But, It need Typescript 2.0 and newest IDEs. (ex. Webstorm 2016.2)
+
+<https://github.com/iamssen/typings-d3/tree/types>
 
 # Other definitions for d3.js 4.x
 - [tomwanzek/d3-v4-definitelytyped](https://github.com/tomwanzek/d3-v4-definitelytyped)
