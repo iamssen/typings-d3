@@ -344,7 +344,7 @@ declare module 'd3-selection' {
     
     /** @link https://github.com/d3/d3-transition#transition_ease */
     ease():(t:number)=>number;
-    ease(value:(t:number)=>number);
+    ease(value:(t:number)=>number):this;
   }
   
   interface Selection {

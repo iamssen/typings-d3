@@ -1,6 +1,6 @@
 {
   "name": "types.d3",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Type definitions for d3 4.x modules",
   "author": "Seoyeon Lee <https://github.com/iamssen>",
   "license": "MIT",
