@@ -1,3 +1,9 @@
+# This project is deprecated
+
+[tomwanzek/d3-v4-definitelytyped](https://github.com/tomwanzek/d3-v4-definitelytyped)
+
+~~~~~~~~~~~~
+
 # The type definitions for d3.js 4.x ![travis-ci](https://travis-ci.org/iamssen/typings-d3.svg?branch=master)
 
 - [d3-array](d3-array)
@@ -15,11 +21,10 @@
 
 # NPM based declarations for Typescript 2.0
 
-This declarations will move to npm `@types/d3v4`.
+This declarations will move to npm `types-d3`.
 
 But, It need Typescript 2.0 and newest IDEs. (ex. Webstorm 2016.2)
 
 <https://github.com/iamssen/typings-d3/tree/types>
 
-# Other definitions for d3.js 4.x
-- [tomwanzek/d3-v4-definitelytyped](https://github.com/tomwanzek/d3-v4-definitelytyped)
+
