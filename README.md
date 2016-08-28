@@ -1,8 +1,7 @@
 # This project is deprecated
 
-[tomwanzek/d3-v4-definitelytyped](https://github.com/tomwanzek/d3-v4-definitelytyped)
+- [tomwanzek/d3-v4-definitelytyped](https://github.com/tomwanzek/d3-v4-definitelytyped)
 
-~~~~~~~~~~~~
 
 # The type definitions for d3.js 4.x ![travis-ci](https://travis-ci.org/iamssen/typings-d3.svg?branch=master)
 
