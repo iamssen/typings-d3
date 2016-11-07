@@ -4,7 +4,7 @@ export interface Axis {
    *
    * @link https://github.com/d3/d3-axis#_axis
    */
-  (selectionOrTransition:any);
+  (selectionOrTransition:any): any;
 
   /** @link https://github.com/d3/d3-axis#axis_scale */
   scale():any;
@@ -16,7 +16,7 @@ export interface Axis {
    *
    * @link https://github.com/d3/d3-axis#axis_ticks
    */
-  ticks(...args):this;
+  ticks(...args: any[]):this;
 
   /**
    * pass to scale.ticks(count:number)
